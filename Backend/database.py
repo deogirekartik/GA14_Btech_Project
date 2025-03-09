@@ -31,18 +31,21 @@ def verify_user(username: str, password: str) -> bool:
         return True
     return False
 
-# Save Chat History
-def save_chat(user: str, message: str, timestamp: str):
+# Save Chat History (Modified to store both user & bot messages)
+def save_chat(user: str, sender: str, message: str, timestamp: str):
     chat_data = {
         "user": user,
+        "sender": sender,  # 'user' or 'bot'
         "message": message,
         "timestamp": timestamp
     }
     chats_collection.insert_one(chat_data)
 
-def get_chat_history(user):
+
+# Retrieve Chat History
+def get_chat_history(user: str):
     chats = chats_collection.find({"user": user}).sort("timestamp", pymongo.ASCENDING)
-    return [{"user": chat["user"], "message": chat["message"], "timestamp": chat["timestamp"]} for chat in chats]
+    return [{"sender": chat["sender"], "message": chat["message"], "timestamp": chat["timestamp"]} for chat in chats]
 
 
 # Save MRI Analysis Result (Now stores results as a list per user)
