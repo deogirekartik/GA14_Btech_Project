@@ -1,0 +1,24 @@
+body {
+    background-color: #f0f2f6;
+    font-family: Arial, sans-serif;
+}
+
+.bot-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    max-width: 70%;
+}
+
+.user-message {
+    background-color: #cff4fc;
+    color: #055160;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+    max-width: 70%;
+    text-align: right;
+    margin-left: auto;
+}
