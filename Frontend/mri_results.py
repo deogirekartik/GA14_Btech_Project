@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Backend API URL
-BASE_URL = "http://localhost:5000"
+BASE_URL = "https://b-tech-project.onrender.com"
 
 def fetch_mri_results(username):
     """Fetch MRI results from the backend for a given user."""

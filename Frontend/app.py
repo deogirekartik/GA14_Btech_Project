@@ -22,7 +22,7 @@ if "chat_history" not in st.session_state:
     st.session_state.chat_history = []  # Initialize chat history
 
 # Backend API URL
-API_URL = "http://127.0.0.1:5000"
+API_URL = "https://b-tech-project.onrender.com"
 
 # Authentication Pages
 def show_login_page():

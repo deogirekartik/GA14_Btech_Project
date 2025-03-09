@@ -3,8 +3,8 @@ import requests
 from PIL import Image
 from datetime import datetime
 
-BACKEND_URL = "http://127.0.0.1:5000/predict"
-SAVE_MRI_RESULT_URL = "http://127.0.0.1:5000/save_mri_result"  # Endpoint for saving MRI results
+BACKEND_URL = "https://b-tech-project.onrender.com/predict"
+SAVE_MRI_RESULT_URL = "https://b-tech-project.onrender.com/save_mri_result"  # Endpoint for saving MRI results
 
 def display_image_upload():
     st.header("Upload MRI Image")

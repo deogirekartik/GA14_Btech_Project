@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 # Backend API endpoint
-CHAT_API_URL = "http://127.0.0.1:5000/generate_response"
+CHAT_API_URL = "https://b-tech-project.onrender.com/generate_response"
 
 # Initialize chat messages
 if "messages" not in st.session_state:
