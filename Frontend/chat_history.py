@@ -1,47 +1,21 @@
 import streamlit as st
 import requests
+from datetime import datetime
+import pytz
+
 
 # Backend API URL
-BASE_URL = "https://b-tech-project.onrender.com"
-
+BASE_URL = "http://127.0.0.1:5000"
+#BASE_URL = "https://b-tech-project.onrender.com"
 def fetch_chat_history(username):
     """Fetch chat history from the backend for a logged-in user."""
     response = requests.get(f"{BASE_URL}/get_chat_history", params={"user": username})
     
+    print(f"DEBUG: Fetching chat history for {username} - Status Code: {response.status_code}")
+    print(f"DEBUG: API Response: {response.text}")
+
     if response.status_code == 200:
-        chat_data = response.json()  # This is a list, not a dictionary
-        return chat_data  # Just return the list directly
+        data = response.json()
+        return data.get("chat_history", [])  # Ensure we get the correct key from JSON
     
     return []
-
-
-def chat_history_page():
-    """Chat History Page in Streamlit."""
-    
-
-    # Ensure user is logged in
-    if "username" not in st.session_state or not st.session_state.username:
-        st.error("❌ You must be logged in to view chat history.")
-        return
-
-    username = st.session_state.username  # Get logged-in username
-    st.write(f"**Logged in as:** `{username}`")
-
-    # Fetch chat history automatically on page load
-    chat_history = fetch_chat_history(username)
-    
-    if chat_history:
-        st.subheader("📜 Your Chat History")
-
-        # Display messages
-        for chat in chat_history:
-            sender = "🧑 You" if chat["sender"] == "user" else "🤖 Bot"
-            st.markdown(f"**{sender}:** {chat['message']}")
-            st.write(f"🕒 {chat['timestamp']}")
-            st.write("---")
-    else:
-        st.warning("⚠️ No chat history found.")
-
-# Run the Chat History Page
-if __name__ == "__main__":
-    chat_history_page()
