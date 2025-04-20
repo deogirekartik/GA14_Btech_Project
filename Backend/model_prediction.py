@@ -7,7 +7,7 @@ import io
 model = keras.models.load_model('/Users/deogirekartik/Vscode/The_Final_Project/model/the_xception_model.keras')
 
 # Class labels for tumor types
-CLASS_LABELS = ["No Tumor", "Glioma", "Meningioma", "Pituitary", "Metastasis"]
+CLASS_LABELS = ["No Tumor", "Glioma", "Meningioma", "Pituitary"]
 
 def predict_image(image_file):
     """Predict the tumor type and cancer status from an uploaded image."""
