@@ -10,9 +10,7 @@ from datetime import datetime
 import pytz  
 
 # Set the page configuration (must be the first Streamlit command)
-#st.set_page_config(page_title="Smart Neuro-Oncology Assistant", layout="wide"
-
-
+#st.set_page_config(page_title="Smart Neuro-Oncology Assistant", layout="wide")
 
 # Apply custom styles
 st.markdown('<link href="styles.css" rel="stylesheet">', unsafe_allow_html=True)
@@ -255,8 +253,4 @@ def handle_logout():
     st.rerun()
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     main()
-=======
-    main(),
->>>>>>> b984dc4ec32f47ef9ab1134efc2a3a28140b173a

@@ -129,32 +129,5 @@ def display_image_upload():
         
         if st.button("Clear Results", key=f"clear_{session_id}"):
             del st.session_state[result_key]
-            del st.session_state.new_mri_analysis 
-      st.rerun()
-
-    # Display results only for current session
-    if st.session_state[result_key]:
-        result = st.session_state[result_key]
-        st.subheader("Analysis Results")
-        
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.markdown(f"**Prediction:**  \n{result.get('class', 'N/A')}")
-        with col2:
-            st.markdown(f"**Confidence:**  \n{result.get('confidence', 'N/A')}%")
-        with col3:
-            status = result.get('cancer_status', 'N/A')
-            color = "#ff4b4b" if status == "Cancerous" else "#2ecc71"
-            st.markdown(f"**Cancer Status:**  \n<span style='color:{color}'>{status}</span>", 
-                       unsafe_allow_html=True)
-
-        st.subheader("Recommended Specialists")
-        if status == "Cancerous":
-            display_doctors("cancerous")
-        else:
-            display_doctors("non_cancerous")
-        
-        if st.button("Clear Results", key=f"clear_{session_id}"):
-            del st.session_state[result_key]
             del st.session_state.new_mri_analysis
             st.rerun()

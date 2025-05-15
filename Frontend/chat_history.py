@@ -1,17 +1,10 @@
-
-
 import streamlit as st
 import requests
 from datetime import datetime
 import pytz
 
-from datetime import datetime
-import pytz
-
 
 # Backend API URL
-BASE_URL = "http://127.0.0.1:5000"
-#BASE_URL = "https://b-tech-project.onrender.com"
 BASE_URL = "http://127.0.0.1:5000"
 #BASE_URL = "https://b-tech-project.onrender.com"
 def fetch_chat_history(username):
@@ -21,13 +14,7 @@ def fetch_chat_history(username):
     print(f"DEBUG: Fetching chat history for {username} - Status Code: {response.status_code}")
     print(f"DEBUG: API Response: {response.text}")
 
-    
-    print(f"DEBUG: Fetching chat history for {username} - Status Code: {response.status_code}")
-    print(f"DEBUG: API Response: {response.text}")
-
     if response.status_code == 200:
-        data = response.json()
-        return data.get("chat_history", [])  # Ensure we get the correct key from JSON
         data = response.json()
         return data.get("chat_history", [])  # Ensure we get the correct key from JSON
     
@@ -36,11 +23,7 @@ def fetch_chat_history(username):
 
 
 
-
-
 def chat_history_page():
-    """Chat History Page in Streamlit with Session Support."""
-    ist = pytz.timezone('Asia/Kolkata')  # Timezone setup
     """Chat History Page in Streamlit with Session Support."""
     ist = pytz.timezone('Asia/Kolkata')  # Timezone setup
     
@@ -48,7 +31,6 @@ def chat_history_page():
         st.error("❌ You must be logged in to view chat history.")
         return
 
-    username = st.session_state.username
     username = st.session_state.username
     st.write(f"**Logged in as:** `{username}`")
 
