@@ -17,8 +17,8 @@ import uuid
 import json
 import numpy as np
 
-BACKEND_URL = "http://127.0.0.1:5000/predict"
-SAVE_MRI_RESULT_URL = "http://127.0.0.1:5000/save_mri_result"
+BACKEND_URL = "https://ga14-btech-project.onrender.com/predict"
+SAVE_MRI_RESULT_URL = "https://ga14-btech-project.onrender.com/save_mri_result"
 
 
 

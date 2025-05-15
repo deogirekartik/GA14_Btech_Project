@@ -5,8 +5,8 @@ import pytz
 
 
 # Backend API URL
-BASE_URL = "http://127.0.0.1:5000"
-#BASE_URL = "https://b-tech-project.onrender.com"
+# BASE_URL = "http://127.0.0.1:5000"
+BASE_URL = "https://ga14-btech-project.onrender.com"
 def fetch_chat_history(username):
     """Fetch chat history from the backend for a logged-in user."""
     response = requests.get(f"{BASE_URL}/get_chat_history", params={"user": username})

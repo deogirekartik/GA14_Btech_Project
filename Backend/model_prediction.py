@@ -43,7 +43,7 @@ from PIL import Image, UnidentifiedImageError
 import io
 
 # Load the saved model (replace with your actual model path)
-model = keras.models.load_model('/Users/deogirekartik/Vscode/The_Final_Project/model/Xception_best-4.keras')
+model = keras.models.load_model('/Users/deogirekartik/Vscode/The_Final_Project/Backend/Xception_best-4.keras')
 
 # Class labels for tumor types
 CLASS_LABELS = ["Glioma", "Meningioma", "No Tumor", "Pituitary"]
