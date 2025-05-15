@@ -22,3 +22,26 @@ body {
     text-align: right;
     margin-left: auto;
 }
+/* styles.css */
+.stForm {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 3rem);
+    background: white;
+    padding: 1rem;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+/* Doctor cards hover effect */
+div[data-testid="stMarkdownContainer"] div:hover {
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Status colors */
+.cancer-status {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
