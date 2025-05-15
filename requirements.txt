@@ -8,5 +8,5 @@ pymongo
 pytz
 requests
 streamlit
-tensorflow
+tensorflow-cpu
 Werkzeug
